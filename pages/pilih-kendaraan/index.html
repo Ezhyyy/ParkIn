@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkIn - Pilih Kendaraan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importing Inter as requested by the design system, and Poppins for overall app consistency -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="phone-frame">
+        
+        <!-- Header Section -->
+        <header class="header-section">
+            <button class="btn-back" id="btnBack">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="header-titles">
+                <h1 class="header-title">Pesan Parkir</h1>
+                <p class="header-subtitle">Parkir UB Gate 3</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Progress Steps Indicator -->
+            <div class="steps-container">
+                <div class="step-line"></div>
+                <div class="step-item active">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Kendaraan</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Slot</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Konfirmasi</span>
+                </div>
+            </div>
+
+            <!-- Vehicle Selection (Jenis Kendaraan) -->
+            <section class="section-group">
+                <h3 class="section-title">Jenis Kendaraan</h3>
+                <div class="vehicle-grid">
+                    <!-- Motor Card (Active by default) -->
+                    <div class="vehicle-card active" id="cardMotor" data-type="motor" data-rate="2000" data-name="Motor">
+                        <img src="../../assets/icons/icon_Motorcycle.png" alt="Motor Icon" class="vehicle-icon">
+                        <span class="vehicle-name">Motor</span>
+                        <span class="vehicle-rate">Rp 2.000/jam</span>
+                    </div>
+                    <!-- Mobil Card -->
+                    <div class="vehicle-card" id="cardMobil" data-type="mobil" data-rate="5000" data-name="Mobil">
+                        <img src="../../assets/icons/icon_Car.png" alt="Mobil Icon" class="vehicle-icon">
+                        <span class="vehicle-name">Mobil</span>
+                        <span class="vehicle-rate">Rp 5.000/jam</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Duration Estimation (Estimasi Durasi) -->
+            <section class="section-group">
+                <h3 class="section-title">Estimasi Durasi</h3>
+                <div class="duration-row">
+                    <button class="duration-btn active" data-hours="1">1 Jam</button>
+                    <button class="duration-btn" data-hours="2">2 Jam</button>
+                    <button class="duration-btn" data-hours="3">3 Jam</button>
+                    <button class="duration-btn" id="btnCustom" data-hours="custom">Custom</button>
+                </div>
+                <!-- Inline custom input field shown when Custom is active -->
+                <div class="custom-input-container" id="customInputWrapper" style="display: none;">
+                    <input type="number" id="inputCustomHours" min="1" max="24" placeholder="Masukkan jam (contoh: 5)" class="custom-hours-input">
+                    <span class="input-suffix">Jam</span>
+                </div>
+            </section>
+
+            <!-- Start Time (Waktu Mulai) -->
+            <section class="section-group">
+                <h3 class="section-title">Waktu Mulai</h3>
+                <div class="start-time-box">
+                    <span id="startTimeText">Sekarang · 09.30 WIB</span>
+                </div>
+            </section>
+
+            <!-- Cost Summary Box -->
+            <div class="cost-summary-card">
+                <div class="cost-details-left">
+                    <span class="cost-label">Estimasi Biaya</span>
+                    <span class="cost-value" id="costValueText">Rp 2.000</span>
+                </div>
+                <div class="cost-details-right">
+                    <span class="summary-meta" id="summaryMetaText">1 jam · Motor</span>
+                    <span class="summary-subtext">Belum termasuk denda</span>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer Button Container -->
+        <div class="footer-container">
+            <button class="btn-primary-action" id="btnNext">Pilih Slot Parkir</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

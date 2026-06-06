@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkIn - Pilih Slot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="phone-frame">
+        
+        <!-- Header Section -->
+        <header class="header-section">
+            <button class="btn-back" id="btnBack">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 19L5 12L12 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="header-titles">
+                <h1 class="header-title">Pilih Slot</h1>
+                <p class="header-subtitle">Parkir UB Gate 3</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Progress Steps Indicator -->
+            <div class="steps-container">
+                <!-- Line background colored orange between 1 and 2, grey between 2 and 3 -->
+                <div class="step-line step-line-left active"></div>
+                <div class="step-line step-line-right"></div>
+                
+                <div class="step-item completed">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Kendaraan</span>
+                </div>
+                <div class="step-item active">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Slot</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Konfirmasi</span>
+                </div>
+            </div>
+
+            <!-- Legend Bar -->
+            <div class="legend-bar">
+                <div class="legend-item">
+                    <div class="legend-color available"></div>
+                    <span class="legend-label">Tersedia</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color occupied"></div>
+                    <span class="legend-label">Terisi</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color selected"></div>
+                    <span class="legend-label">Dipilih</span>
+                </div>
+            </div>
+
+            <!-- Zona A Slots Grid -->
+            <section class="section-group">
+                <h3 class="section-title" id="titleZonaA">Zona A — Motor</h3>
+                <div class="slots-grid">
+                    <!-- Statuses: available (Tersedia), occupied (Terisi), selected (Dipilih) -->
+                    <button class="slot-btn available" data-slot="A1" data-zone="Zona A">A1</button>
+                    <button class="slot-btn available" data-slot="A2" data-zone="Zona A">A2</button>
+                    <button class="slot-btn occupied" data-slot="A3" data-zone="Zona A" disabled>A3</button>
+                    <button class="slot-btn selected" data-slot="A4" data-zone="Zona A">A4</button>
+                    
+                    <button class="slot-btn occupied" data-slot="A5" data-zone="Zona A" disabled>A5</button>
+                    <button class="slot-btn available" data-slot="A6" data-zone="Zona A">A6</button>
+                    <button class="slot-btn available" data-slot="A7" data-zone="Zona A">A7</button>
+                    <button class="slot-btn occupied" data-slot="A8" data-zone="Zona A" disabled>A8</button>
+                </div>
+            </section>
+
+            <!-- Zona B Slots Grid -->
+            <section class="section-group">
+                <h3 class="section-title" id="titleZonaB">Zona B — Motor</h3>
+                <div class="slots-grid">
+                    <button class="slot-btn occupied" data-slot="B1" data-zone="Zona B" disabled>B1</button>
+                    <button class="slot-btn occupied" data-slot="B2" data-zone="Zona B" disabled>B2</button>
+                    <button class="slot-btn available" data-slot="B3" data-zone="Zona B">B3</button>
+                    <button class="slot-btn available" data-slot="B4" data-zone="Zona B">B4</button>
+                    
+                    <button class="slot-btn available" data-slot="B5" data-zone="Zona B">B5</button>
+                    <button class="slot-btn occupied" data-slot="B6" data-zone="Zona B" disabled>B6</button>
+                </div>
+            </section>
+
+            <!-- Selected Slot Banner (Bottom Display) -->
+            <div class="selected-slot-card">
+                <div class="slot-details-left">
+                    <span class="slot-details-label">Slot Dipilih</span>
+                    <span class="slot-details-value" id="selectedSlotNameText">A4 — Zona A</span>
+                </div>
+                <div class="slot-details-right">
+                    <span class="vehicle-badge" id="selectedVehicleBadge">Motor</span>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer Button Container -->
+        <div class="footer-container">
+            <button class="btn-primary-action" id="btnConfirm">Konfirmasi Pesanan</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
